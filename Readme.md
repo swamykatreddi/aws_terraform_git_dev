@@ -21,3 +21,5 @@ resource creation
 
 $ENV:TF_LOG='TRACE'
 $ENV:TF_LOG_PATH='/Users/katreddi/Documents/devsecopsb46/aws-terraform/terraformbasecode/terraform.log'
+
+#create another version 
