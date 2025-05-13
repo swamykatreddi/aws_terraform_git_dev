@@ -12,17 +12,17 @@ resource "random_password" "password" {
 }
 
 #resource "aws_secretsmanager_secret" "password" {
- # count       = 2
-  #name        = "password-${count.index + 1}"
-  #description = "This is a password ${count.index + 1}"
-  #tags = {
-    #Name        = "password-${count.index + 1}"
-    #Environment = var.environment
-  #}
+# count       = 2
+#name        = "password-${count.index + 1}"
+#description = "This is a password ${count.index + 1}"
+#tags = {
+#Name        = "password-${count.index + 1}"
+#Environment = var.environment
+#}
 #}
 
 #resource "aws_secretsmanager_secret_version" "password_version" {
-  #count         = 2
-  #secret_id     = aws_secretsmanager_secret.password[count.index].id
-  #secret_string = random_password.password[count.index].result
+#count         = 2
+#secret_id     = aws_secretsmanager_secret.password[count.index].id
+#secret_string = random_password.password[count.index].result
 #}

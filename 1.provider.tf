@@ -7,12 +7,14 @@ terraform {
     }
   }
   backend "s3" {
-    bucket       = "devsceops40one"
+    bucket       = "devsceops40twotwo"
     key          = "terraform.tfstate"
     region       = "us-east-1"
     encrypt      = true
     use_lockfile = true
+
   }
+
 }
 # Provider Configuration
 provider "aws" {

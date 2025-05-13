@@ -26,10 +26,11 @@ resource "aws_subnet" "subnet3" {
 }
 
 # S3 Bucket
-resource "aws_s3_bucket" "devsceops40one" {
-  bucket = "devsceops40one"
+resource "aws_s3_bucket" "devsceops40" {
+  bucket        = "devsceops40twotwo"
+  force_destroy = true
   tags = {
-    Name        = "devsceops40one"
+    Name        = "devsceops40twotwo"
     Environment = "Dev"
   }
   depends_on = [aws_subnet.subnet1, aws_subnet.subnet2, aws_subnet.subnet3]
