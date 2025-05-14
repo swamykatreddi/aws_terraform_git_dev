@@ -8,15 +8,15 @@ resource "aws_security_group" "allow_all_traffic-sg1" {
     Environment = var.environment
   }
 
-  # lifecycle {
-  #   ignore_changes = [
-  #     # Ignore changes to the security group rules
-  #     ingress,
-  #     egress,
-  #   ]
+  lifecycle {
+    ignore_changes = [
+      # Ignore changes to the security group rules
+      ingress,
+      egress,
+    ]
 
 
-  #}
+  }
 }
 
 

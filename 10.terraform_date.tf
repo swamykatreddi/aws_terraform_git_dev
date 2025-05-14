@@ -1,4 +1,4 @@
-resource "null_resource" "server1" {
+resource "terraform_data" "server1" {
   count = var.machine_count
   provisioner "file" {
     source      = "script.sh"
@@ -32,9 +32,7 @@ resource "null_resource" "server1" {
     EOH
   }
   #This resouce will be recreated if there is a change in Server tag version.
-  triggers = {
-    public-servers-tags = element(aws_instance.webservers.*.tags.Version, count.index)
-  }
+  triggers_replace = element(aws_instance.webservers.*.tags.Version, count.index)
 }
 
   
