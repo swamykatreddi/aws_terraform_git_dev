@@ -1,3 +1,7 @@
+variable "aws_region" {
+  description = "The AWS region to deploy to"
+  type        = string
+}
 variable "cidr_block" {
   description = "The CIDR block for the VPC"
   type        = string
@@ -13,21 +17,15 @@ variable "vpc_name" {
   type        = string
   #default     = "vpc1"
 }
-variable "subnet1_cidr_block" {
-  description = "CIDR block for the first subnet"
-  type        = string
-  #default     = "10.40.1.0/24"
+variable "public-subnet_cidr_block" {
+  description = "CIDR block for the public subnet"
+  type        = list(string)
 }
-variable "subnet2_cidr_block" {
-  description = "CIDR block for the second subnet"
-  type        = string
-  #default     = "10.40.2.0/24"
+variable "private-subnet_cidr_block" {
+  description = "CIDR block for the private subnet"
+  type        = list(string)
 }
-variable "subnet3_cidr_block" {
-  description = "CIDR block for the second subnet"
-  type        = string
-  #default     = "10.40.3.0/24"
-}
+
 
 variable "newsubnets_cidr_block" {
   description = "CIDR block for the newsubnets"
@@ -45,7 +43,7 @@ variable "machine_count" {
 }
 variable "imagename" {
   description = "Name of the image to use"
-  type        = string
+  type        = map(any)
 }
 variable "instance_type" {
   description = "Type of instance to create"
@@ -58,4 +56,12 @@ variable "instance_type" {
 variable "key_name" {
   description = "Name of the key pair to use"
   type        = string
+}
+variable "inbound_ports" {
+  description = "List of inbound ports to allow"
+  type        = list(number)
+}
+variable "outbound_ports" {
+  description = "List of inbound ports to allow"
+  type        = list(number)
 }

@@ -3,27 +3,15 @@ output "vpc1_id" {
   value       = aws_vpc.vpc1.id
 }
 
-output "subnet1_id" {
+output "public-subnet_id" {
   description = "The IDs of the subnets"
-  value       = aws_subnet.subnet1.id
+  value       = aws_subnet.public-subnet[*].id
 }
-
-output "subnet2_id" {
+output "private-subnet_id" {
   description = "The IDs of the subnets"
-  value       = aws_subnet.subnet2.id
+  value       = aws_subnet.private-subnet[*].id
 }
-
-output "subnet3_id" {
-  description = "The IDs of the subnets"
-  value       = aws_subnet.subnet3.id
-}
-
 output "allow_all_traffic-sg1_id" {
   description = "The IDs of the security groups"
   value       = aws_security_group.allow_all_traffic-sg1.id
-}
-
-output "s3_bucket_name" {
-  description = "The name of the S3 bucket"
-  value       = aws_s3_bucket.devsceops40tstate.bucket
 }

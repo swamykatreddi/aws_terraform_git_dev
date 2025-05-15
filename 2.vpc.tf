@@ -8,5 +8,15 @@ resource "aws_vpc" "vpc1" {
   }
 }
 
+# internet gateway
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.vpc1.id
+
+  tags = {
+    Name        = "${var.vpc_name}-igw"
+    Environment = var.environment
+  }
+}
+
 
 
